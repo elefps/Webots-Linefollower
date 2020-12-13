@@ -1,0 +1,115 @@
+#VRML_SIM R2019b utf8
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.99406412616203 0.10067048003808178 0.041254909121480776 0.5863408513720821
+  position -0.24552646122194183 1.1863178021395693 1.5644029795940202
+}
+TexturedBackground {
+  texture "empty_office"
+}
+TexturedBackgroundLight {
+  texture "empty_office"
+  castShadows FALSE
+}
+DEF FLOOR Solid {
+  children [
+    DEF FLOOR_SHAPE Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/line2.png"
+          ]
+        }
+        roughness 1
+        metalness 0
+      }
+      geometry Plane {
+        size 1.3 1.3
+      }
+    }
+  ]
+  boundingObject USE FLOOR_SHAPE
+  locked TRUE
+  rotationStep 0.261799
+}
+DEF wall Solid {
+  translation 0.65 0.05 0
+  children [
+    DEF Wall_shape Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.3 1.3
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE Wall_shape
+  locked TRUE
+}
+DEF wall Solid {
+  translation -0.65 0.05 0
+  children [
+    DEF Wall_shape Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.3 1.3
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE Wall_shape
+  locked TRUE
+}
+DEF wall Solid {
+  translation 0 0.05 -0.65
+  rotation 0 1 0 1.57
+  children [
+    DEF Wall_shape Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.3 1.3
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject USE Wall_shape
+  locked TRUE
+}
+DEF wall Solid {
+  translation 0 0.05 0.65
+  rotation 0 1 0 1.57
+  children [
+    DEF Wall_shape Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.3 1.3
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject USE Wall_shape
+  locked TRUE
+}
+E-puck {
+  translation -0.48999226321070843 -3.1966741508973606e-05 0.058176776268702254
+  rotation -0.9999668598831719 -0.007426061536740424 -0.003336576904763045 0.0013119761981094749
+  controller "controller1"
+  camera_fieldOfView 0.9
+  camera_width 424
+  camera_height 240
+  camera_rotation 1 0 0 -0.1
+}
